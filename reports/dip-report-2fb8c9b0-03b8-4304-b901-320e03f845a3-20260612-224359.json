@@ -1,0 +1,333 @@
+{
+  "query_id": "2fb8c9b0-03b8-4304-b901-320e03f845a3",
+  "recommendation": "Use a staged, auditable rollout with explicit governance checks.",
+  "confidence_score": 0.45,
+  "supporting_claims": [],
+  "dissenting_views": [
+    "Economics Agent: Prefer the option with the best long-run cost-benefit profile.",
+    "Ethics Agent: Prefer the option with the clearest harm minimization and stakeholder fairness.",
+    "Policy Agent: Choose the path that is easiest to govern, audit, and explain.",
+    "Research Agent: Use evidence-backed reasoning and collect missing facts before finalizing.",
+    "Risk Agent: Delay commitment until major failure modes are enumerated."
+  ],
+  "risks": [
+    "Economic estimates can be very sensitive to assumptions.",
+    "Ethical framing can be too broad without concrete criteria.",
+    "Policy constraints may evolve faster than the system.",
+    "Incomplete evidence may bias the conclusion.",
+    "Overconservative recommendations may reduce usefulness."
+  ],
+  "tradeoffs": [
+    "Speed versus scrutiny",
+    "Consensus versus visible dissent",
+    "Accuracy versus completeness"
+  ],
+  "what_would_change_the_decision": [
+    "Strong evidence that reverses the highest-risk claim",
+    "A new stakeholder constraint",
+    "A materially different domain context"
+  ],
+  "agent_outputs": [
+    {
+      "agent_name": "Economics Agent",
+      "stance": "Prefer the option with the best long-run cost-benefit profile.",
+      "claims": [
+        "The recommendation should consider total cost, not just immediate benefit.",
+        "Second-order effects can dominate the short-term outcome."
+      ],
+      "evidence": [
+        "High-stakes policy decisions usually require review across multiple perspectives.",
+        "Transparent reasoning supports auditability and governance."
+      ],
+      "assumptions": [
+        "Cost and benefit can be estimated with reasonable accuracy."
+      ],
+      "confidence": 0.74,
+      "risks": [
+        "Economic estimates can be very sensitive to assumptions."
+      ],
+      "open_questions": [
+        "What are the direct costs?",
+        "What are the externalities?"
+      ]
+    },
+    {
+      "agent_name": "Ethics Agent",
+      "stance": "Prefer the option with the clearest harm minimization and stakeholder fairness.",
+      "claims": [
+        "The recommendation should avoid unfair or harmful side effects.",
+        "Stakeholder impact should be explicit, not implicit."
+      ],
+      "evidence": [
+        "High-stakes policy decisions usually require review across multiple perspectives.",
+        "Transparent reasoning supports auditability and governance."
+      ],
+      "assumptions": [
+        "The decision has meaningful impact on people or institutions."
+      ],
+      "confidence": 0.79,
+      "risks": [
+        "Ethical framing can be too broad without concrete criteria."
+      ],
+      "open_questions": [
+        "Who bears the cost?",
+        "Who benefits and who is excluded?"
+      ]
+    },
+    {
+      "agent_name": "Policy Agent",
+      "stance": "Choose the path that is easiest to govern, audit, and explain.",
+      "claims": [
+        "The recommendation should align with applicable policy or compliance constraints.",
+        "A staged rollout is safer when regulation or governance is unclear."
+      ],
+      "evidence": [
+        "High-stakes policy decisions usually require review across multiple perspectives.",
+        "Transparent reasoning supports auditability and governance."
+      ],
+      "assumptions": [
+        "A governance mechanism exists or can be created."
+      ],
+      "confidence": 0.76,
+      "risks": [
+        "Policy constraints may evolve faster than the system."
+      ],
+      "open_questions": [
+        "What regulations apply?",
+        "What audit trail is required?"
+      ]
+    },
+    {
+      "agent_name": "Research Agent",
+      "stance": "Use evidence-backed reasoning and collect missing facts before finalizing.",
+      "claims": [
+        "The decision should be grounded in available evidence rather than intuition.",
+        "Independent reasoning helps reveal conflicting interpretations."
+      ],
+      "evidence": [
+        "High-stakes policy decisions usually require review across multiple perspectives.",
+        "Transparent reasoning supports auditability and governance."
+      ],
+      "assumptions": [
+        "The retrieved evidence is relevant to the user's question."
+      ],
+      "confidence": 0.82,
+      "risks": [
+        "Incomplete evidence may bias the conclusion."
+      ],
+      "open_questions": [
+        "What evidence is missing?",
+        "Which claim is most uncertain?"
+      ]
+    },
+    {
+      "agent_name": "Risk Agent",
+      "stance": "Delay commitment until major failure modes are enumerated.",
+      "claims": [
+        "A fast answer can hide operational or downstream risks.",
+        "Confidence should be discounted when evidence coverage is incomplete."
+      ],
+      "evidence": [
+        "High-stakes policy decisions usually require review across multiple perspectives.",
+        "Transparent reasoning supports auditability and governance."
+      ],
+      "assumptions": [
+        "Hidden failures are costly in this decision context."
+      ],
+      "confidence": 0.88,
+      "risks": [
+        "Overconservative recommendations may reduce usefulness."
+      ],
+      "open_questions": [
+        "What is the worst plausible failure?",
+        "What happens if the recommendation is wrong?"
+      ]
+    },
+    {
+      "agent_name": "Strategy Agent",
+      "stance": "Select the option that is most coherent with the long-term objective.",
+      "claims": [
+        "The recommendation should align with the broader goal and execution capacity.",
+        "A visible decision process increases trust in high-stakes settings."
+      ],
+      "evidence": [
+        "High-stakes policy decisions usually require review across multiple perspectives.",
+        "Transparent reasoning supports auditability and governance."
+      ],
+      "assumptions": [
+        "The objective is stable enough to optimize against."
+      ],
+      "confidence": 0.8,
+      "risks": [
+        "A strategically elegant decision can still fail operationally."
+      ],
+      "open_questions": [
+        "What is the long-term objective?",
+        "What capability limits exist?"
+      ]
+    }
+  ],
+  "critiques": [
+    {
+      "target_agent": "Risk Agent",
+      "objection": "High confidence may be masking unverified assumptions.",
+      "severity": "medium",
+      "evidence_against": [
+        "No claim is fully validated until evidence is checked."
+      ],
+      "unresolved_issue": "Confidence should be discounted if supporting evidence is sparse."
+    },
+    {
+      "target_agent": "Economics Agent",
+      "objection": "The response identifies gaps but does not yet close them.",
+      "severity": "low",
+      "evidence_against": [
+        "Open questions indicate incomplete coverage."
+      ],
+      "unresolved_issue": "What are the direct costs?"
+    },
+    {
+      "target_agent": "Ethics Agent",
+      "objection": "The response identifies gaps but does not yet close them.",
+      "severity": "low",
+      "evidence_against": [
+        "Open questions indicate incomplete coverage."
+      ],
+      "unresolved_issue": "Who bears the cost?"
+    },
+    {
+      "target_agent": "Policy Agent",
+      "objection": "The response identifies gaps but does not yet close them.",
+      "severity": "low",
+      "evidence_against": [
+        "Open questions indicate incomplete coverage."
+      ],
+      "unresolved_issue": "What regulations apply?"
+    },
+    {
+      "target_agent": "Research Agent",
+      "objection": "The response identifies gaps but does not yet close them.",
+      "severity": "low",
+      "evidence_against": [
+        "Open questions indicate incomplete coverage."
+      ],
+      "unresolved_issue": "What evidence is missing?"
+    },
+    {
+      "target_agent": "Risk Agent",
+      "objection": "The response identifies gaps but does not yet close them.",
+      "severity": "low",
+      "evidence_against": [
+        "Open questions indicate incomplete coverage."
+      ],
+      "unresolved_issue": "What is the worst plausible failure?"
+    },
+    {
+      "target_agent": "Strategy Agent",
+      "objection": "The response identifies gaps but does not yet close them.",
+      "severity": "low",
+      "evidence_against": [
+        "Open questions indicate incomplete coverage."
+      ],
+      "unresolved_issue": "What is the long-term objective?"
+    }
+  ],
+  "validations": [
+    {
+      "claim_id": "0:0",
+      "claim": "The recommendation should consider total cost, not just immediate benefit.",
+      "status": "unsupported",
+      "source": "No matching source",
+      "confidence": 0.54,
+      "notes": "No strong evidence match was found."
+    },
+    {
+      "claim_id": "0:1",
+      "claim": "Second-order effects can dominate the short-term outcome.",
+      "status": "unsupported",
+      "source": "No matching source",
+      "confidence": 0.54,
+      "notes": "No strong evidence match was found."
+    },
+    {
+      "claim_id": "1:0",
+      "claim": "The recommendation should avoid unfair or harmful side effects.",
+      "status": "unsupported",
+      "source": "No matching source",
+      "confidence": 0.5900000000000001,
+      "notes": "No strong evidence match was found."
+    },
+    {
+      "claim_id": "1:1",
+      "claim": "Stakeholder impact should be explicit, not implicit.",
+      "status": "unsupported",
+      "source": "No matching source",
+      "confidence": 0.5900000000000001,
+      "notes": "No strong evidence match was found."
+    },
+    {
+      "claim_id": "2:0",
+      "claim": "The recommendation should align with applicable policy or compliance constraints.",
+      "status": "unsupported",
+      "source": "High-stakes policy decisions usually require review across multiple perspectives.",
+      "confidence": 0.56,
+      "notes": "No strong evidence match was found."
+    },
+    {
+      "claim_id": "2:1",
+      "claim": "A staged rollout is safer when regulation or governance is unclear.",
+      "status": "unsupported",
+      "source": "No matching source",
+      "confidence": 0.56,
+      "notes": "No strong evidence match was found."
+    },
+    {
+      "claim_id": "3:0",
+      "claim": "The decision should be grounded in available evidence rather than intuition.",
+      "status": "unsupported",
+      "source": "No matching source",
+      "confidence": 0.6199999999999999,
+      "notes": "No strong evidence match was found."
+    },
+    {
+      "claim_id": "3:1",
+      "claim": "Independent reasoning helps reveal conflicting interpretations.",
+      "status": "unsupported",
+      "source": "Transparent reasoning supports auditability and governance.",
+      "confidence": 0.6199999999999999,
+      "notes": "No strong evidence match was found."
+    },
+    {
+      "claim_id": "4:0",
+      "claim": "A fast answer can hide operational or downstream risks.",
+      "status": "unsupported",
+      "source": "No matching source",
+      "confidence": 0.6799999999999999,
+      "notes": "No strong evidence match was found."
+    },
+    {
+      "claim_id": "4:1",
+      "claim": "Confidence should be discounted when evidence coverage is incomplete.",
+      "status": "unsupported",
+      "source": "No matching source",
+      "confidence": 0.6799999999999999,
+      "notes": "No strong evidence match was found."
+    },
+    {
+      "claim_id": "5:0",
+      "claim": "The recommendation should align with the broader goal and execution capacity.",
+      "status": "unsupported",
+      "source": "Transparent reasoning supports auditability and governance.",
+      "confidence": 0.6000000000000001,
+      "notes": "No strong evidence match was found."
+    },
+    {
+      "claim_id": "5:1",
+      "claim": "A visible decision process increases trust in high-stakes settings.",
+      "status": "unsupported",
+      "source": "High-stakes policy decisions usually require review across multiple perspectives.",
+      "confidence": 0.6000000000000001,
+      "notes": "No strong evidence match was found."
+    }
+  ]
+}

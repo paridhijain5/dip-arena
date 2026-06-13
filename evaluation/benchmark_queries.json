@@ -1,0 +1,20 @@
+[
+  {
+    "query": "Should a hospital deploy an AI triage assistant?",
+    "domain": "healthcare",
+    "stakes": "high",
+    "constraints": ["human review required"]
+  },
+  {
+    "query": "Should a startup cut prices to gain market share?",
+    "domain": "business",
+    "stakes": "medium",
+    "constraints": ["protect runway"]
+  },
+  {
+    "query": "Should a city expand public transit or road capacity first?",
+    "domain": "policy",
+    "stakes": "high",
+    "constraints": ["budget constrained"]
+  }
+]

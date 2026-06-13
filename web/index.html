@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DIP Arena — Multi-Agent Decision Intelligence</title>
+  <meta name="description" content="DIP Arena is a multi-agent decision intelligence workspace for policy, healthcare, and strategic analysis." />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="#top" aria-label="DIP Arena home">
+        <span class="brand-mark" aria-hidden="true">DIP</span>
+        <span class="brand-copy">
+          <strong>DIP Arena</strong>
+          <span>Multi-Agent Decision Intelligence</span>
+        </span>
+      </a>
+
+      <nav class="topnav" aria-label="Primary">
+        <a href="#features">Features</a>
+        <a href="#reports">Reports</a>
+        <a href="#compare">Compare</a>
+        <a href="#docs">Docs</a>
+      </nav>
+
+      <button type="button" id="themeToggle" class="theme-toggle" aria-pressed="false">Dark theme</button>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section class="hero" id="top">
+      <div class="hero-copy">
+        <div class="eyebrow">Decision intelligence workspace</div>
+        <h1>AI-powered multi-agent decision intelligence for complex policy, healthcare, and strategic analysis.</h1>
+        <p>
+          Analyze high-stakes questions with structured debate, validation, and auditable outputs designed for professional decision teams.
+        </p>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-label">Platform overview</div>
+        <div class="hero-card-value">Structured analysis</div>
+        <div class="hero-card-note">Specialist agents debate, critique, validate, and synthesize the result into a clean decision report.</div>
+      </div>
+    </section>
+
+    <section class="workspace" id="features">
+      <form id="queryForm" class="panel input-panel">
+        <div class="panel-header">
+          <h2>Query Builder</h2>
+          <span>Compose a decision request</span>
+        </div>
+
+        <label>
+          Query
+          <textarea id="query" rows="5" placeholder="Example: Should Delhi prioritize economic growth or aggressive pollution control?" required></textarea>
+        </label>
+
+        <div class="field-row">
+          <label>
+            Domain
+            <select id="domain">
+              <option value="general">General</option>
+              <option value="policy" selected>Policy</option>
+              <option value="healthcare">Healthcare</option>
+              <option value="business">Business</option>
+              <option value="research">Research</option>
+              <option value="security">Security</option>
+            </select>
+          </label>
+
+          <label>
+            Stakes
+            <select id="stakes">
+              <option value="low">Low</option>
+              <option value="medium" selected>Medium</option>
+              <option value="high">High</option>
+            </select>
+          </label>
+        </div>
+
+        <label>
+          Constraint
+          <input id="constraint" type="text" placeholder="Example: must remain auditable" />
+        </label>
+
+        <label>
+          Notes
+          <textarea id="notes" rows="3" placeholder="Optional context for the decision."></textarea>
+        </label>
+
+        <div class="actions">
+          <button type="submit" class="primary">Analyze Query</button>
+          <button type="button" id="loadSample" class="secondary">Load Sample</button>
+        </div>
+      </form>
+
+      <section class="panel output-panel" id="reports">
+        <div class="panel-header">
+          <h2>Decision Report</h2>
+          <span id="statusText">Waiting for a query</span>
+        </div>
+
+        <div class="toolbar">
+          <button type="button" id="exportReport" class="secondary" disabled>Export JSON</button>
+          <button type="button" id="exportMarkdown" class="secondary" disabled>Export Markdown</button>
+          <button type="button" id="clearHistory" class="ghost">Clear History</button>
+        </div>
+
+        <div id="summary" class="summary-empty">
+          Run an analysis to see the result here.
+        </div>
+
+        <div class="report-grid">
+          <article class="report-card highlight">
+            <div class="card-label">Recommendation</div>
+            <div id="recommendation" class="card-value">No output yet</div>
+          </article>
+
+          <article class="report-card">
+            <div class="card-label">Confidence</div>
+            <div id="confidence" class="card-value">0%</div>
+          </article>
+
+          <article class="report-card">
+            <div class="card-label">Risks</div>
+            <div id="riskCount" class="card-value">0</div>
+          </article>
+
+          <article class="report-card">
+            <div class="card-label">Dissent</div>
+            <div id="dissentCount" class="card-value">0</div>
+          </article>
+        </div>
+      </section>
+    </section>
+
+    <section class="report-band" aria-label="Detailed report sections">
+      <div class="report-band-inner">
+        <div class="report-band-header">
+          <h2>Report Details</h2>
+          <span>Supporting evidence, debate, comparison, and history</span>
+        </div>
+
+        <div class="report-sections">
+          <section>
+            <h3>Supporting Claims</h3>
+            <div id="supportingClaims" class="list-box empty-state">No claims yet.</div>
+          </section>
+
+          <section>
+            <h3>Dissenting Views</h3>
+            <div id="dissentingViews" class="list-box empty-state">No dissent yet.</div>
+          </section>
+
+          <section>
+            <h3>Risks and Tradeoffs</h3>
+            <div id="risks" class="list-box empty-state">No risk analysis yet.</div>
+            <div id="tradeoffs" class="chips"></div>
+          </section>
+
+          <section>
+            <h3>Agent Debate</h3>
+            <div id="agents" class="stack"></div>
+          </section>
+
+          <section>
+            <h3>Validation Matrix</h3>
+            <div id="validations" class="stack"></div>
+          </section>
+
+          <section>
+            <h3>What Would Change the Decision</h3>
+            <div id="changeTriggers" class="chips"></div>
+          </section>
+
+          <section class="history-section">
+            <div class="section-header-row">
+              <h3>Query History</h3>
+              <span>Saved locally in your browser</span>
+            </div>
+            <div id="historyList" class="history-list empty-state">No history yet.</div>
+          </section>
+
+          <section class="compare-section" id="compare">
+            <div class="section-header-row">
+              <h3>Compare Reports</h3>
+              <span>Pick any two saved queries</span>
+            </div>
+
+            <div class="compare-controls">
+              <label>
+                Report A
+                <select id="compareA"></select>
+              </label>
+              <label>
+                Report B
+                <select id="compareB"></select>
+              </label>
+            </div>
+            <div class="actions compare-actions">
+              <button type="button" id="compareReports" class="primary" disabled>Compare Selected</button>
+            </div>
+            <div id="compareResult" class="compare-result empty-state">No comparison yet.</div>
+          </section>
+
+          <section id="docs" class="docs-section">
+            <div class="section-header-row">
+              <h3>Docs</h3>
+              <span>How the workspace is structured</span>
+            </div>
+            <div class="docs-card">
+              <p>
+                Enter a decision question, pick a domain, and review the generated report. Results are stored locally in the browser so you can compare, export, and revisit prior analyses.
+              </p>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>
